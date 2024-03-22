@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/charmbracelet/bubbles/filepicker"
 	"github.com/charmbracelet/bubbles/textarea"
@@ -56,9 +57,11 @@ type ToAI struct {
 	livingDoc   string
 }
 
-type FromAi struct {
+type FromAI struct {
 	coverLetter string
 }
+
+type AIMsg string
 
 type model struct {
 	stage        Stage
@@ -66,9 +69,16 @@ type model struct {
 	filepicker   filepicker.Model
 	selectedFile string
 	toAI         ToAI
-	fromAi       FromAi
+	fromAI       FromAI
 	userApproved bool
 	err          error
+}
+
+func callAI(userInfo ToAI) tea.Cmd {
+	// performs io and returns a msg
+	return func() tea.Msg {
+		return AIMsg("The generated cover letter")
+	}
 }
 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
@@ -81,26 +91,34 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case tea.KeyCtrlC:
 			return m, tea.Quit
 		case tea.KeyEsc:
-			if m.textarea.Focused() {
+			// if I am at step 1, collecting the job description
+			if m.textarea.Focused() && m.toAI.description == "" {
 				m.textarea.Blur()
-				// TODO: this causes a bug
-				// m.toAI.description = strings.Trim(m.textarea.Value(), " ")
-				m.toAI.description = m.textarea.Value()
+				m.toAI.description = strings.Trim(m.textarea.Value(), " ")
 				return m, nil
 			} else {
 				return m, tea.Quit
 			}
+		case tea.KeyEnter:
+			if m.textarea.Focused() {
+				m.textarea, cmd = m.textarea.Update(msg)
+				return m, nil
+			}
 		}
+	case AIMsg:
+		m.stage = End
+		return m, nil
 	}
-
+	// this is black boxee... with KeyMsg
+	// unexpected behavior
 	m.filepicker, cmd = m.filepicker.Update(msg)
 	cmds = append(cmds, cmd)
-
 	if didSelect, path := m.filepicker.DidSelectFile(msg); didSelect {
 		m.selectedFile = path
 		m.stage = Chat
+		return m, callAI(m.toAI)
 	}
-
+	// will this do all kinds of unknown stuff if i don't see the UI?
 	m.textarea, cmd = m.textarea.Update(msg)
 	cmds = append(cmds, cmd)
 
@@ -123,6 +141,8 @@ Paste in the job description below 👇`+"\n\n%s\n\npress 'Escape' when finished
 		if !m.userApproved {
 			return "calling assistant..."
 		}
+	case End:
+		return "Good luck on the application!"
 	}
 
 	return "something else happended..?"
@@ -146,7 +166,7 @@ func initialModel() model {
 	return model{
 		stage:      Setup,
 		toAI:       ToAI{},
-		fromAi:     FromAi{},
+		fromAI:     FromAI{},
 		filepicker: fp,
 		textarea:   ta,
 	}
