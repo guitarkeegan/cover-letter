@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/charmbracelet/bubbles/filepicker"
 	"github.com/charmbracelet/bubbles/textarea"
 	tea "github.com/charmbracelet/bubbletea"
 )
@@ -60,15 +61,19 @@ type FromAi struct {
 }
 
 type model struct {
-	stage    Stage
-	textarea textarea.Model
-	toAI     ToAI
-	fromAi   FromAi
-	err      error
+	stage        Stage
+	textarea     textarea.Model
+	filepicker   filepicker.Model
+	selectedFile string
+	toAI         ToAI
+	fromAi       FromAi
+	userApproved bool
+	err          error
 }
 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	var cmd tea.Cmd
+	var cmds []tea.Cmd
 
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
@@ -78,6 +83,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case tea.KeyEsc:
 			if m.textarea.Focused() {
 				m.textarea.Blur()
+				// TODO: this causes a bug
+				// m.toAI.description = strings.Trim(m.textarea.Value(), " ")
 				m.toAI.description = m.textarea.Value()
 				return m, nil
 			} else {
@@ -86,9 +93,18 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	}
 
-	m.textarea, cmd = m.textarea.Update(msg)
+	m.filepicker, cmd = m.filepicker.Update(msg)
+	cmds = append(cmds, cmd)
 
-	return m, cmd
+	if didSelect, path := m.filepicker.DidSelectFile(msg); didSelect {
+		m.selectedFile = path
+		m.stage = Chat
+	}
+
+	m.textarea, cmd = m.textarea.Update(msg)
+	cmds = append(cmds, cmd)
+
+	return m, tea.Batch(cmds...)
 }
 
 func (m model) View() string {
@@ -98,9 +114,14 @@ func (m model) View() string {
 		if m.toAI.description == "" {
 			return fmt.Sprintf(
 				`Let's make your cover letter!
-Paste in the job description below 👇`+"\n\n%s\n\npress esc when finished", m.textarea.View())
-		} else {
-			return "OK, now for that file..."
+Paste in the job description below 👇`+"\n\n%s\n\npress 'Escape' when finished", m.textarea.View())
+		}
+		if m.selectedFile == "" {
+			return fmt.Sprintf("Select a file where you give your work experience.\n\n%s\n\n", m.filepicker.View())
+		}
+	case Chat:
+		if !m.userApproved {
+			return "calling assistant..."
 		}
 	}
 
@@ -117,16 +138,17 @@ func initialModel() model {
 	ta := textarea.New()
 	ta.Placeholder = "Paste the job description here..."
 	ta.ShowLineNumbers = false
-	ta.MaxWidth = 1000
-	ta.MaxHeight = 200
 	ta.CharLimit = 2000
 	ta.Focus()
 
+	fp := filepicker.New()
+
 	return model{
-		stage:    Setup,
-		toAI:     ToAI{},
-		fromAi:   FromAi{},
-		textarea: ta,
+		stage:      Setup,
+		toAI:       ToAI{},
+		fromAi:     FromAi{},
+		filepicker: fp,
+		textarea:   ta,
 	}
 }
 
