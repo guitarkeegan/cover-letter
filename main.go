@@ -10,6 +10,8 @@ import (
 
 	"github.com/charmbracelet/bubbles/filepicker"
 	"github.com/charmbracelet/bubbles/textarea"
+	"github.com/charmbracelet/bubbles/textinput"
+	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
 )
 
@@ -73,8 +75,9 @@ type ToAI struct {
 	livingDoc   string
 }
 
-type FromAI struct {
-	coverLetter string
+type FromAIMsg struct {
+	aiConversation []string
+	coverLetter    string
 }
 
 type AIMsg string
@@ -83,18 +86,28 @@ type FileMsg string
 type model struct {
 	stage        StageMsg
 	textarea     textarea.Model
+	textInput    textinput.Model
+	viewport     viewport.Model
 	filepicker   filepicker.Model
 	selectedFile string
 	toAI         ToAI
-	fromAI       FromAI
+	fromAiMsg    FromAIMsg
 	userApproved bool
 	err          error
 }
 
-func callAI(userInfo ToAI) tea.Cmd {
+func sendContextToAI(userInfo ToAI) tea.Cmd {
 	// performs io and returns a msg
 	return func() tea.Msg {
 		return AIMsg("The generated cover letter")
+	}
+}
+
+// AI will handle it's own state of the conversation
+// There is redundancy with storing the conversation here and with the AI
+func sendMessageToAI(userMessage string) tea.Cmd {
+	return func() tea.Msg {
+		return AIMsg("AI response here...")
 	}
 }
 
@@ -120,7 +133,11 @@ func getLivingDoc(path string) tea.Cmd {
 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	dbg("msg: %[1]T, %[1]v", msg)
-	var cmd tea.Cmd
+	var (
+		cmd tea.Cmd
+		ti  tea.Cmd
+		vp  tea.Cmd
+	)
 
 	switch msg := msg.(type) {
 	// start with default exit keys
@@ -135,7 +152,6 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, tea.Quit
 
 		case tea.KeyEsc:
-			// if I am at step 1, collecting the job description
 			dbg("    Handling KeyEsc")
 			if m.textarea.Focused() && m.toAI.description == "" {
 				m.textarea.Blur()
@@ -144,11 +160,34 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			}
 			return m, tea.Quit
 
+		case tea.KeyEnter:
+			if m.textInput.Focused() {
+				dbg("    Handling KeyEnter")
+				m.textInput, ti = m.textInput.Update(msg)
+				m.viewport, vp = m.viewport.Update(msg)
+				m.fromAiMsg.aiConversation = append(m.fromAiMsg.aiConversation, "You: "+m.textInput.Value())
+				m.viewport.SetContent(strings.Join(m.fromAiMsg.aiConversation, "\n"))
+				m.textInput.Reset()
+				m.viewport.GotoBottom()
+				return m, tea.Batch(vp, ti, sendMessageToAI(m.textInput.Value()))
+			}
+
 		}
 	case FileMsg:
 		dbg("  Handling FileMsg")
 		m.toAI.livingDoc = string(msg)
 		m.stage = Chat
+		m.textInput.Focus()
+		return m, tea.Batch(sendContextToAI(m.toAI), ti)
+
+	case AIMsg:
+		dbg("  Handling AIMessage")
+		m.viewport, vp = m.viewport.Update(msg)
+		m.fromAiMsg.aiConversation = append(m.fromAiMsg.aiConversation, "Assistant: "+string(msg))
+		m.viewport.SetContent(strings.Join(m.fromAiMsg.aiConversation, "\n"))
+		m.viewport.GotoBottom()
+		return m, vp
+
 	}
 
 	dbg("textarea updating")
@@ -159,19 +198,28 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		return m, cmd
 	}
 
-	dbg("Update filepicker")
-	m.filepicker, cmd = m.filepicker.Update(msg)
-	if cmd != nil {
-		dbg("  cmd: %v", cmd)
-		return m, cmd
+	if m.toAI.livingDoc == "" {
+		dbg("Update filepicker")
+		m.filepicker, cmd = m.filepicker.Update(msg)
+		if cmd != nil {
+			dbg("  cmd: %v", cmd)
+			return m, cmd
+		}
+
+		if didSelect, path := m.filepicker.DidSelectFile(msg); didSelect {
+			dbg("  didSelect!")
+			m.selectedFile = path
+			m.stage = Chat
+			// TODO: read in file
+			return m, getLivingDoc(m.selectedFile)
+		}
 	}
 
-	if didSelect, path := m.filepicker.DidSelectFile(msg); didSelect {
-		dbg("  didSelect!")
-		m.selectedFile = path
-		m.stage = Chat
-		// TODO: read in file
-		return m, getLivingDoc(m.selectedFile)
+	dbg("Update textInput")
+	m.textInput, ti = m.textInput.Update(msg)
+	if ti != nil {
+		dbg("  ti: %v", ti)
+		return m, ti
 	}
 
 	return m, nil
@@ -192,7 +240,7 @@ Paste in the job description below 👇`+"\n\n%s\n\npress 'Escape' when finished
 		}
 	case Chat:
 		if !m.userApproved {
-			return fmt.Sprintf("Your living document\n%s", m.toAI.livingDoc)
+			return fmt.Sprintf("%s\n\n%v\n", m.viewport.View(), m.textInput.View())
 		}
 	case End:
 		return "Good luck on the application!"
@@ -220,14 +268,26 @@ func initialModel() model {
 	ta.CharLimit = 2000
 	ta.Focus()
 
+	ti := textinput.New()
+	ti.Placeholder = "message to assistant..."
+	ti.CharLimit = 200
+	ti.Width = 20
+
 	fp := filepicker.New()
 
+	vp := viewport.New(30, 5)
+	vp.SetContent(`Press 'Enter' to send a message to the assistant`)
+
 	return model{
-		stage:      Setup,
-		toAI:       ToAI{},
-		fromAI:     FromAI{},
-		filepicker: fp,
-		textarea:   ta,
+		stage:        Setup,
+		textarea:     ta,
+		textInput:    ti,
+		viewport:     vp,
+		filepicker:   fp,
+		selectedFile: "",
+		toAI:         ToAI{},
+		fromAiMsg:    FromAIMsg{},
+		userApproved: false,
 	}
 }
 
