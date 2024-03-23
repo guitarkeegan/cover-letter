@@ -1,0 +1,360 @@
+Calling Init
+msg: tea.WindowSizeMsg, {127 33}
+textarea updating
+Update filepicker
+msg: filepicker.readDirMsg, {1 [0xc0000a8d00 0xc0000a8c40 0xc0000a8c00 0xc0000a8c80 0xc0000a8d80 0xc0000a8e00]}
+textarea updating
+Update filepicker
+msg: main.StageMsg, setup
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, display
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: tea.KeyMsg, flex
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, flex
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, direction
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, row
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, and
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, row-reverse
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, flew-wrap:
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, wrap;
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, will
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: tea.KeyMsg, wrap
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, to
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, the
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, next
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, line
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, wrap-reverse
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, nowrap
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, is
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, default
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, flex-flow:
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, row
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg,  
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, wrap;
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, justify-content:
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, start
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: cursor.blinkCanceled, {}
+textarea updating
+Update filepicker
+msg: cursor.BlinkMsg, {0 48}
+textarea updating
+  returning non nil cmd
+msg: tea.KeyMsg, esc
+  Handling KeyMsg
+    Handling KeyEsc
+msg: cursor.BlinkMsg, {0 49}
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, down
+  Handling KeyMsg
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, enter
+  Handling KeyMsg
+textarea updating
+Update filepicker
+  didSelect!
+msg: main.AIMsg, The generated cover letter
+textarea updating
+Update filepicker
+msg: tea.KeyMsg, esc
+  Handling KeyMsg
+    Handling KeyEsc

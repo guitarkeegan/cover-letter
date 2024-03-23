@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/charmbracelet/bubbles/filepicker"
@@ -12,12 +13,26 @@ import (
 )
 
 const (
-	Setup Stage = "setup"
-	Chat  Stage = "chat"
-	End   Stage = "end"
+	Setup StageMsg = "setup"
+	Chat  StageMsg = "chat"
+	End   StageMsg = "end"
 )
 
-type Stage string
+var dbg = func() func(format string, as ...any) {
+	if os.Getenv("DEBUG") == "" {
+		return func(string, ...any) {}
+	}
+	file, err := os.Create("log")
+	if err != nil {
+		log.Fatal("nooooo!!!")
+	}
+	// truncate = delete the rest
+	return func(format string, as ...any) {
+		fmt.Fprintf(file, format+"\n", as...)
+	}
+}()
+
+type StageMsg string
 
 // no deeper cause here
 var ErrMissingValue = errors.New("missing value")
@@ -64,7 +79,7 @@ type FromAI struct {
 type AIMsg string
 
 type model struct {
-	stage        Stage
+	stage        StageMsg
 	textarea     textarea.Model
 	filepicker   filepicker.Model
 	selectedFile string
@@ -82,47 +97,59 @@ func callAI(userInfo ToAI) tea.Cmd {
 }
 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	dbg("msg: %[1]T, %[1]v", msg)
 	var cmd tea.Cmd
-	var cmds []tea.Cmd
 
 	switch msg := msg.(type) {
+	// start with default exit keys
+	// send a setup msg 'setup' after event loop
+	// in event loop, case to handle msg listening for setup method
 	case tea.KeyMsg:
+		dbg("  Handling KeyMsg")
+
 		switch msg.Type {
 		case tea.KeyCtrlC:
+			dbg("    Handling KeyCtrlC")
 			return m, tea.Quit
+
 		case tea.KeyEsc:
 			// if I am at step 1, collecting the job description
+			dbg("    Handling KeyEsc")
 			if m.textarea.Focused() && m.toAI.description == "" {
 				m.textarea.Blur()
 				m.toAI.description = strings.Trim(m.textarea.Value(), " ")
 				return m, nil
-			} else {
-				return m, tea.Quit
 			}
-		case tea.KeyEnter:
-			if m.textarea.Focused() {
-				m.textarea, cmd = m.textarea.Update(msg)
-				return m, nil
-			}
+			return m, tea.Quit
+
 		}
-	case AIMsg:
-		m.stage = End
-		return m, nil
+
 	}
-	// this is black boxee... with KeyMsg
-	// unexpected behavior
+	//	if m.textarea.Focused() {
+	dbg("textarea updating")
+
+	m.textarea, cmd = m.textarea.Update(msg)
+	if cmd != nil {
+		dbg("  returning non nil cmd")
+		return m, cmd
+	}
+
+	dbg("Update filepicker")
 	m.filepicker, cmd = m.filepicker.Update(msg)
-	cmds = append(cmds, cmd)
+	if cmd != nil {
+		dbg("  cmd: %v", cmd)
+		return m, cmd
+	}
+
 	if didSelect, path := m.filepicker.DidSelectFile(msg); didSelect {
+		dbg("  didSelect!")
 		m.selectedFile = path
 		m.stage = Chat
 		return m, callAI(m.toAI)
 	}
-	// will this do all kinds of unknown stuff if i don't see the UI?
-	m.textarea, cmd = m.textarea.Update(msg)
-	cmds = append(cmds, cmd)
 
-	return m, tea.Batch(cmds...)
+	return m, nil
+
 }
 
 func (m model) View() string {
@@ -135,7 +162,7 @@ func (m model) View() string {
 Paste in the job description below 👇`+"\n\n%s\n\npress 'Escape' when finished", m.textarea.View())
 		}
 		if m.selectedFile == "" {
-			return fmt.Sprintf("Select a file where you give your work experience.\n\n%s\n\n", m.filepicker.View())
+			return fmt.Sprintf("\n\nSelect a file where you give your work experience.\n\n%s\n\njob description: %q\n", m.filepicker.View(), m.toAI.description)
 		}
 	case Chat:
 		if !m.userApproved {
@@ -150,7 +177,13 @@ Paste in the job description below 👇`+"\n\n%s\n\npress 'Escape' when finished
 }
 
 func (m model) Init() tea.Cmd {
-	return nil
+	initStage := func() tea.Msg {
+		dbg("Calling Init")
+		return Setup
+	}
+	fpInit := m.filepicker.Init()
+
+	return tea.Batch(initStage, fpInit)
 }
 
 func initialModel() model {
