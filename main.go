@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"strings"
@@ -77,6 +78,7 @@ type FromAI struct {
 }
 
 type AIMsg string
+type FileMsg string
 
 type model struct {
 	stage        StageMsg
@@ -93,6 +95,26 @@ func callAI(userInfo ToAI) tea.Cmd {
 	// performs io and returns a msg
 	return func() tea.Msg {
 		return AIMsg("The generated cover letter")
+	}
+}
+
+func getLivingDoc(path string) tea.Cmd {
+	return func() tea.Msg {
+		file, err := os.Open(path)
+		if err != nil {
+			// panic for now
+			log.Fatal("unable to find the file!")
+		}
+		defer file.Close()
+
+		content, err := io.ReadAll(file)
+		if err != nil {
+			log.Fatal("unable to ReadAll")
+		}
+
+		text := string(content)
+
+		return FileMsg(text)
 	}
 }
 
@@ -123,9 +145,12 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, tea.Quit
 
 		}
-
+	case FileMsg:
+		dbg("  Handling FileMsg")
+		m.toAI.livingDoc = string(msg)
+		m.stage = Chat
 	}
-	//	if m.textarea.Focused() {
+
 	dbg("textarea updating")
 
 	m.textarea, cmd = m.textarea.Update(msg)
@@ -145,7 +170,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		dbg("  didSelect!")
 		m.selectedFile = path
 		m.stage = Chat
-		return m, callAI(m.toAI)
+		// TODO: read in file
+		return m, getLivingDoc(m.selectedFile)
 	}
 
 	return m, nil
@@ -166,7 +192,7 @@ Paste in the job description below 👇`+"\n\n%s\n\npress 'Escape' when finished
 		}
 	case Chat:
 		if !m.userApproved {
-			return "calling assistant..."
+			return fmt.Sprintf("Your living document\n%s", m.toAI.livingDoc)
 		}
 	case End:
 		return "Good luck on the application!"
