@@ -120,6 +120,16 @@ func sendContextToAI(c *openai.Client, userInfo ToAI, msgHistory []openai.ChatCo
 		Content: fmt.Sprintf("Here is the user's information. Based on the job that they are applying for, and the user's experience, generate the first draft of a cover letter. Then, ask the user if they would like to make any modifications. Job Description: %s User Experience: %s", userInfo.description, userInfo.livingDoc),
 	}
 	resp := cl.ConverseWithAI(c, compMsg, msgHistory)
+
+	file, err := os.Create("firstCover")
+	if err != nil {
+		log.Fatal("Error writing firstCover file!", err)
+	}
+	file.WriteString(resp.Content)
+	err = file.Close()
+	if err != nil {
+		log.Fatal("Error closing file", err)
+	}
 	return func() tea.Msg {
 		return AIChatMsg(resp)
 	}
@@ -309,7 +319,7 @@ func initialModel() model {
 	ta := textarea.New()
 	ta.Placeholder = "Paste the job description here..."
 	ta.ShowLineNumbers = false
-	ta.CharLimit = 2000
+	ta.CharLimit = 3100
 	ta.Focus()
 
 	ti := textinput.New()
@@ -319,7 +329,7 @@ func initialModel() model {
 
 	fp := filepicker.New()
 
-	vp := viewport.New(30, 5)
+	vp := viewport.New(30, 30)
 	vp.SetContent(`Press 'Enter' to send a message to the assistant`)
 
 	return model{
