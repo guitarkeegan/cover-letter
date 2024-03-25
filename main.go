@@ -3,16 +3,18 @@ package main
 import (
 	"errors"
 	"fmt"
-	"io"
-	"log"
-	"os"
-	"strings"
-
 	"github.com/charmbracelet/bubbles/filepicker"
 	"github.com/charmbracelet/bubbles/textarea"
 	"github.com/charmbracelet/bubbles/textinput"
 	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
+	cl "github.com/guitarkeegan/cover-letter/assistant"
+	"github.com/joho/godotenv"
+	"github.com/sashabaranov/go-openai"
+	"io"
+	"log"
+	"os"
+	"strings"
 )
 
 const (
@@ -75,15 +77,16 @@ type ToAI struct {
 	livingDoc   string
 }
 
-type FromAIMsg struct {
-	aiConversation []string
+type WithAIMsg struct {
+	aiConversation []openai.ChatCompletionMessage
 	coverLetter    string
 }
 
-type AIMsg string
+type AIChatMsg openai.ChatCompletionMessage
 type FileMsg string
 
 type model struct {
+	aiClient     *openai.Client
 	stage        StageMsg
 	textarea     textarea.Model
 	textInput    textinput.Model
@@ -91,23 +94,41 @@ type model struct {
 	filepicker   filepicker.Model
 	selectedFile string
 	toAI         ToAI
-	fromAiMsg    FromAIMsg
+	withAIMsg    WithAIMsg
 	userApproved bool
 	err          error
 }
 
-func sendContextToAI(userInfo ToAI) tea.Cmd {
+func (m model) renderViewport() []string {
+
+	var currMessages []string
+	for _, cm := range m.withAIMsg.aiConversation {
+		switch cm.Role {
+		case openai.ChatMessageRoleUser:
+			currMessages = append(currMessages, "You: "+cm.Content)
+		case openai.ChatMessageRoleAssistant:
+			currMessages = append(currMessages, "Assistant: "+cm.Content)
+		}
+	}
+	return currMessages
+}
+
+func sendContextToAI(c *openai.Client, userInfo ToAI, msgHistory []openai.ChatCompletionMessage) tea.Cmd {
 	// performs io and returns a msg
+	compMsg := openai.ChatCompletionMessage{
+		Role:    openai.ChatMessageRoleSystem,
+		Content: fmt.Sprintf("Here is the user's information. Based on the job that they are applying for, and the user's experience, generate the first draft of a cover letter. Then, ask the user if they would like to make any modifications. Job Description: %s User Experience: %s", userInfo.description, userInfo.livingDoc),
+	}
+	resp := cl.ConverseWithAI(c, compMsg, msgHistory)
 	return func() tea.Msg {
-		return AIMsg("The generated cover letter")
+		return AIChatMsg(resp)
 	}
 }
 
-// AI will handle it's own state of the conversation
-// There is redundancy with storing the conversation here and with the AI
-func sendMessageToAI(userMessage string) tea.Cmd {
+func sendMessageToAI(c *openai.Client, message openai.ChatCompletionMessage, msgHistory []openai.ChatCompletionMessage) tea.Cmd {
+	resp := cl.ConverseWithAI(c, message, msgHistory)
 	return func() tea.Msg {
-		return AIMsg("AI response here...")
+		return AIChatMsg(resp)
 	}
 }
 
@@ -128,6 +149,7 @@ func getLivingDoc(path string) tea.Cmd {
 		text := string(content)
 
 		return FileMsg(text)
+
 	}
 }
 
@@ -165,11 +187,16 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				dbg("    Handling KeyEnter")
 				m.textInput, ti = m.textInput.Update(msg)
 				m.viewport, vp = m.viewport.Update(msg)
-				m.fromAiMsg.aiConversation = append(m.fromAiMsg.aiConversation, "You: "+m.textInput.Value())
-				m.viewport.SetContent(strings.Join(m.fromAiMsg.aiConversation, "\n"))
+				chatMessage := openai.ChatCompletionMessage{
+					Role:    openai.ChatMessageRoleUser,
+					Content: m.textInput.Value(),
+				}
+				m.withAIMsg.aiConversation = append(m.withAIMsg.aiConversation, chatMessage)
+				currMessages := m.renderViewport()
+				m.viewport.SetContent(strings.Join(currMessages, "\n"))
 				m.textInput.Reset()
 				m.viewport.GotoBottom()
-				return m, tea.Batch(vp, ti, sendMessageToAI(m.textInput.Value()))
+				return m, tea.Batch(vp, ti, sendMessageToAI(m.aiClient, chatMessage, m.withAIMsg.aiConversation))
 			}
 
 		}
@@ -178,13 +205,14 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.toAI.livingDoc = string(msg)
 		m.stage = Chat
 		m.textInput.Focus()
-		return m, tea.Batch(sendContextToAI(m.toAI), ti)
+		return m, tea.Batch(sendContextToAI(m.aiClient, m.toAI, m.withAIMsg.aiConversation), ti)
 
-	case AIMsg:
+	case AIChatMsg:
 		dbg("  Handling AIMessage")
 		m.viewport, vp = m.viewport.Update(msg)
-		m.fromAiMsg.aiConversation = append(m.fromAiMsg.aiConversation, "Assistant: "+string(msg))
-		m.viewport.SetContent(strings.Join(m.fromAiMsg.aiConversation, "\n"))
+		m.withAIMsg.aiConversation = append(m.withAIMsg.aiConversation, openai.ChatCompletionMessage(msg))
+		currMessages := m.renderViewport()
+		m.viewport.SetContent(strings.Join(currMessages, "\n"))
 		m.viewport.GotoBottom()
 		return m, vp
 
@@ -262,6 +290,22 @@ func (m model) Init() tea.Cmd {
 
 func initialModel() model {
 
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	apiKey := os.Getenv("OPENAI_API")
+
+	client := openai.NewClient(apiKey)
+
+	aiSetup := []openai.ChatCompletionMessage{
+		{
+			Role:    openai.ChatMessageRoleSystem,
+			Content: "Your job is to help the user create a taylored cover letter based on the job description, and the user's experience.",
+		},
+	}
+
 	ta := textarea.New()
 	ta.Placeholder = "Paste the job description here..."
 	ta.ShowLineNumbers = false
@@ -279,6 +323,7 @@ func initialModel() model {
 	vp.SetContent(`Press 'Enter' to send a message to the assistant`)
 
 	return model{
+		aiClient:     client,
 		stage:        Setup,
 		textarea:     ta,
 		textInput:    ti,
@@ -286,8 +331,10 @@ func initialModel() model {
 		filepicker:   fp,
 		selectedFile: "",
 		toAI:         ToAI{},
-		fromAiMsg:    FromAIMsg{},
-		userApproved: false,
+		withAIMsg: WithAIMsg{
+			aiConversation: aiSetup,
+			coverLetter:    "",
+		},
 	}
 }
 
