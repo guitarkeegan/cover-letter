@@ -12,3 +12,9 @@
 - data is sent to ai assistant
 - user has the ability to prompt and modify the ai assistant output, or accept and create a document
 - the document can be html or a pdf
+
+### Current Progress
+
+- Much of the essential functionality is present.
+- need to bring in better error handling
+- need to have some unit tests to ensure that correct state changes are happening with the update function
