@@ -3,6 +3,11 @@ package main
 import (
 	"errors"
 	"fmt"
+	"io"
+	"log"
+	"os"
+	"strings"
+
 	"github.com/charmbracelet/bubbles/filepicker"
 	"github.com/charmbracelet/bubbles/textarea"
 	"github.com/charmbracelet/bubbles/textinput"
@@ -11,10 +16,6 @@ import (
 	cl "github.com/guitarkeegan/cover-letter/assistant"
 	"github.com/joho/godotenv"
 	"github.com/sashabaranov/go-openai"
-	"io"
-	"log"
-	"os"
-	"strings"
 )
 
 const (
@@ -117,7 +118,7 @@ func sendContextToAI(c *openai.Client, userInfo ToAI, msgHistory []openai.ChatCo
 	// performs io and returns a msg
 	compMsg := openai.ChatCompletionMessage{
 		Role:    openai.ChatMessageRoleSystem,
-		Content: fmt.Sprintf("Here is the user's information. Based on the job that they are applying for, and the user's experience, generate the first draft of a cover letter. Then, ask the user if they would like to make any modifications. Job Description: %s User Experience: %s", userInfo.description, userInfo.livingDoc),
+		Content: fmt.Sprintf("Here is the user's information. Based on the job that they are applying for, and the user's experience, generate the first draft of a cover letter. Make the cover letter concise, and only write about the parts of the user's experience that could be relavent to the job description. No more than 2 paragraphs. Then, ask the user if they would like to make any modifications. Job Description: %s User Experience: %s", userInfo.description, userInfo.livingDoc),
 	}
 	resp := cl.ConverseWithAI(c, compMsg, msgHistory)
 
@@ -171,6 +172,11 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		vp  tea.Cmd
 	)
 
+	dbg("Update Viewport")
+	dbg("Update textInput")
+	m.viewport, vp = m.viewport.Update(msg)
+	m.textInput, ti = m.textInput.Update(msg)
+
 	switch msg := msg.(type) {
 	// start with default exit keys
 	// send a setup msg 'setup' after event loop
@@ -195,20 +201,24 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case tea.KeyEnter:
 			if m.textInput.Focused() {
 				dbg("    Handling KeyEnter")
-				m.textInput, ti = m.textInput.Update(msg)
-				m.viewport, vp = m.viewport.Update(msg)
+				//m.viewport, vp = m.viewport.Update(msg)
 				chatMessage := openai.ChatCompletionMessage{
 					Role:    openai.ChatMessageRoleUser,
 					Content: m.textInput.Value(),
 				}
 				m.withAIMsg.aiConversation = append(m.withAIMsg.aiConversation, chatMessage)
 				currMessages := m.renderViewport()
-				m.viewport.SetContent(strings.Join(currMessages, "\n"))
+				m.viewport.SetContent(strings.Join(currMessages, "\n\n"))
 				m.textInput.Reset()
 				m.viewport.GotoBottom()
 				return m, tea.Batch(vp, ti, sendMessageToAI(m.aiClient, chatMessage, m.withAIMsg.aiConversation))
 			}
-
+		case tea.KeyUp:
+			dbg("    Handling KeyUp")
+			m.viewport.LineUp(1)
+		case tea.KeyDown:
+			dbg("    Handling KeyDown")
+			m.viewport.LineDown(1)
 		}
 	case FileMsg:
 		dbg("  Handling FileMsg")
@@ -219,21 +229,22 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 	case AIChatMsg:
 		dbg("  Handling AIMessage")
-		m.viewport, vp = m.viewport.Update(msg)
 		m.withAIMsg.aiConversation = append(m.withAIMsg.aiConversation, openai.ChatCompletionMessage(msg))
 		currMessages := m.renderViewport()
-		m.viewport.SetContent(strings.Join(currMessages, "\n"))
+		m.viewport.SetContent(strings.Join(currMessages, "\n\n"))
 		m.viewport.GotoBottom()
 		return m, vp
 
 	}
 
-	dbg("textarea updating")
+	if m.stage == Setup {
+		dbg("textarea updating")
+		m.textarea, cmd = m.textarea.Update(msg)
+		if cmd != nil {
+			dbg("  returning non nil cmd")
+			return m, cmd
 
-	m.textarea, cmd = m.textarea.Update(msg)
-	if cmd != nil {
-		dbg("  returning non nil cmd")
-		return m, cmd
+		}
 	}
 
 	if m.toAI.livingDoc == "" {
@@ -253,14 +264,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	}
 
-	dbg("Update textInput")
-	m.textInput, ti = m.textInput.Update(msg)
-	if ti != nil {
-		dbg("  ti: %v", ti)
-		return m, ti
-	}
-
-	return m, nil
+	dbg("  end of update!")
+	return m, tea.Batch(ti, vp)
 
 }
 
@@ -278,7 +283,7 @@ Paste in the job description below 👇`+"\n\n%s\n\npress 'Escape' when finished
 		}
 	case Chat:
 		if !m.userApproved {
-			return fmt.Sprintf("%s\n\n%v\n", m.viewport.View(), m.textInput.View())
+			return fmt.Sprintf("%s\n%v\n", m.viewport.View(), m.textInput.View())
 		}
 	case End:
 		return "Good luck on the application!"
@@ -319,17 +324,17 @@ func initialModel() model {
 	ta := textarea.New()
 	ta.Placeholder = "Paste the job description here..."
 	ta.ShowLineNumbers = false
-	ta.CharLimit = 3100
+	ta.CharLimit = 3200
 	ta.Focus()
 
 	ti := textinput.New()
 	ti.Placeholder = "message to assistant..."
 	ti.CharLimit = 200
-	ti.Width = 20
+	ti.Width = 80
 
 	fp := filepicker.New()
 
-	vp := viewport.New(30, 30)
+	vp := viewport.New(80, 30)
 	vp.SetContent(`Press 'Enter' to send a message to the assistant`)
 
 	return model{

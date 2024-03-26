@@ -1,41 +1,1957 @@
-msg: tea.WindowSizeMsg, {133 35}
+msg: filepicker.readDirMsg, {1 [0xc0000f0000 0xc0000f0180 0xc0000f0100 0xc0000f0040 0xc0000f0080 0xc0000f0140 0xc0000f02c0 0xc0000f0240 0xc0000f0300]}
+Update Viewport
+Update textInput
 textarea updating
+Update filepicker
+  end of update!
+msg: tea.WindowSizeMsg, {104 27}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
 Calling Init
-Update filepicker
-Update textInput
-msg: filepicker.readDirMsg, {1 [0xc0001ce000 0xc0001ce140 0xc0001ce080 0xc0001ce040 0xc0001ce100 0xc0001ce1c0 0xc0001ce240]}
-textarea updating
-Update filepicker
-Update textInput
 msg: main.StageMsg, setup
+Update Viewport
+Update textInput
 textarea updating
 Update filepicker
+  end of update!
+msg: tea.KeyMsg, UTA
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, a
   Handling KeyMsg
 textarea updating
   returning non nil cmd
-msg: cursor.BlinkMsg, {0 2}
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: tea.KeyMsg, seeks
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, a
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Backend
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Developer
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, who
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, will
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, be
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, responsible
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, for
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, designing,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, developing,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, and
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, maintaining
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, our
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, web
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, applications
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, using
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Node.js,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, GraphQL,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, MongoDB,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Postgres,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, and
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Algolia.
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, You
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, will
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, work
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, closely
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, with
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, our
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, front-end
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, development
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, and
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, design
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, teams
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, to
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, ensure
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, that
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, our
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, web
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, applications
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, are
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, optimized
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, for
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, speed,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, scalability,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, and
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, ease
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, of
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, use.
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Experience
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, with
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Azure
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, cloud
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, services,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, IAC,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Github
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, actions,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Terraform,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Kubernetes,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Microservices,
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, and
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, API
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Management
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Systems
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, is
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, a
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, plus.
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, This
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: tea.KeyMsg, is
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, a
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, hybrid
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, position
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, based
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, out
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, of
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, our
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Los
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, Angeles
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: tea.KeyMsg, office.
+Update Viewport
+Update textInput
+  Handling KeyMsg
+textarea updating
+  returning non nil cmd
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: cursor.blinkCanceled, {}
+Update Viewport
+Update textInput
+textarea updating
+Update filepicker
+  end of update!
+msg: cursor.BlinkMsg, {0 160}
+Update Viewport
+Update textInput
 textarea updating
   returning non nil cmd
 msg: tea.KeyMsg, esc
+Update Viewport
+Update textInput
   Handling KeyMsg
     Handling KeyEsc
-msg: cursor.BlinkMsg, {0 3}
+msg: cursor.BlinkMsg, {0 161}
+Update Viewport
+Update textInput
 textarea updating
 Update filepicker
+  end of update!
+msg: tea.KeyMsg, j
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, down
   Handling KeyMsg
 textarea updating
 Update filepicker
+  end of update!
+msg: tea.KeyMsg, j
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, down
   Handling KeyMsg
 textarea updating
 Update filepicker
-Update textInput
+  end of update!
 msg: tea.KeyMsg, enter
+Update Viewport
+Update textInput
   Handling KeyMsg
 textarea updating
 Update filepicker
@@ -43,513 +1959,292 @@ Update filepicker
 msg: main.FileMsg, hello there!
 My name is Keegan, and I like music and code.
 
+Update Viewport
+Update textInput
   Handling FileMsg
-msg: main.AIMsg, The generated cover letter
+msg: main.AIChatMsg, {assistant Dear Hiring Manager,
+
+I am writing to express my interest in the Backend Developer position at UTA. My background in coding and passion for music align perfectly with the responsibilities outlined in the job description. As a Backend Developer, I have experience working with Node.js, MongoDB, and Postgres, and I am confident in my ability to design, develop, and maintain web applications with a focus on speed, scalability, and user experience. Additionally, my familiarity with GraphQL and Algolia will allow me to seamlessly collaborate with front-end development and design teams to optimize web applications.
+
+While my experience aligns well with the requirements of the position, I am also eager to expand my skill set by learning and working with Azure cloud services, IAC, Github actions, Terraform, Kubernetes, and other technologies mentioned in the job description. I am excited about the opportunity to contribute to UTA's projects and bring a fresh perspective to the team. 
+
+Would you like to make any modifications or additions to the cover letter before you submit your application? []  <nil> [] }
+Update Viewport
+Update textInput
   Handling AIMessage
-msg: tea.KeyMsg, h
+msg: tea.KeyMsg, I
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: tea.KeyMsg, e
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, l
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, l
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, o
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
+  end of update!
 msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, a
+  end of update!
+msg: tea.KeyMsg, t
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, g
+  end of update!
+msg: tea.KeyMsg, h
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, a
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
+  end of update!
 msg: tea.KeyMsg, i
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
+  end of update!
 msg: tea.KeyMsg, n
-  Handling KeyMsg
-textarea updating
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
+  Handling KeyMsg
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: cursor.BlinkMsg, {0 12}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 7}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 13}
-textarea updating
+  end of update!
+msg: tea.KeyMsg, k
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: tea.KeyMsg, enter
   Handling KeyMsg
-    Handling KeyEnter
-msg: main.AIMsg, AI response here...
-  Handling AIMessage
-msg: cursor.BlinkMsg, {0 14}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 15}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 16}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 17}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: tea.KeyMsg, w
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, h
+  end of update!
+msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, a
+  end of update!
+msg: tea.KeyMsg, I
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, t
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
+  end of update!
 msg: tea.KeyMsg, '
-  Handling KeyMsg
-textarea updating
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
+  Handling KeyMsg
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, s
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg,  
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, u
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, p
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: cursor.BlinkMsg, {0 27}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: tea.KeyMsg, ?
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, :
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: cursor.BlinkMsg, {0 30}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: tea.KeyMsg, backspace
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: cursor.BlinkMsg, {0 32}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: tea.KeyMsg, enter
-  Handling KeyMsg
-    Handling KeyEnter
-msg: main.AIMsg, AI response here...
-  Handling AIMessage
-msg: cursor.BlinkMsg, {0 33}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 34}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 35}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 36}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 37}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 38}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 39}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: tea.KeyMsg, h
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, o
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, w
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg,  
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, a
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, b
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, o
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, u
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, t
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg,  
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, t
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, h
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, e
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
+  end of update!
 msg: tea.KeyMsg, m
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
+  end of update!
 msg: tea.KeyMsg,  
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, d
+  end of update!
+msg: tea.KeyMsg, g
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
+  end of update!
 msg: tea.KeyMsg, o
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, g
+  end of update!
+msg: tea.KeyMsg, o
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: cursor.BlinkMsg, {0 58}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: tea.KeyMsg, backspace
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: cursor.BlinkMsg, {0 60}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: tea.KeyMsg, d
+Update Viewport
+Update textInput
   Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: cursor.blinkCanceled, {}
-textarea updating
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, g
-  Handling KeyMsg
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 18}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 19}
+Update Viewport
 Update textInput
-msg: tea.KeyMsg, e
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, r
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, s
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: tea.KeyMsg, ?
-  Handling KeyMsg
-textarea updating
-Update textInput
-  ti: 0x113a3e0
-msg: cursor.blinkCanceled, {}
-textarea updating
-Update textInput
-msg: cursor.BlinkMsg, {0 67}
-textarea updating
-Update textInput
-  ti: 0x113a3e0
+  end of update!
 msg: tea.KeyMsg, enter
+Update Viewport
+Update textInput
   Handling KeyMsg
     Handling KeyEnter
-msg: main.AIMsg, AI response here...
+msg: cursor.BlinkMsg, {0 20}
+Update Viewport
+Update textInput
+  end of update!
+msg: main.AIChatMsg, {assistant Great! Your cover letter is now ready to be submitted with your job application. Best of luck with your application for the Backend Developer position at UTA! If you need any more assistance or have any other questions in the future, feel free to ask. []  <nil> [] }
+Update Viewport
+Update textInput
   Handling AIMessage
-msg: cursor.BlinkMsg, {0 68}
-textarea updating
+msg: cursor.BlinkMsg, {0 21}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 69}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 22}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 70}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 23}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 71}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 24}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 72}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 25}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 73}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 26}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 74}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 27}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
-msg: cursor.BlinkMsg, {0 75}
-textarea updating
+  end of update!
+msg: cursor.BlinkMsg, {0 28}
+Update Viewport
 Update textInput
-  ti: 0x113a3e0
+  end of update!
+msg: cursor.BlinkMsg, {0 29}
+Update Viewport
+Update textInput
+  end of update!
+msg: cursor.BlinkMsg, {0 30}
+Update Viewport
+Update textInput
+  end of update!
+msg: cursor.BlinkMsg, {0 31}
+Update Viewport
+Update textInput
+  end of update!
+msg: cursor.BlinkMsg, {0 32}
+Update Viewport
+Update textInput
+  end of update!
+msg: cursor.BlinkMsg, {0 33}
+Update Viewport
+Update textInput
+  end of update!
+msg: cursor.BlinkMsg, {0 34}
+Update Viewport
+Update textInput
+  end of update!
+msg: cursor.BlinkMsg, {0 35}
+Update Viewport
+Update textInput
+  end of update!
+msg: cursor.BlinkMsg, {0 36}
+Update Viewport
+Update textInput
+  end of update!
+msg: tea.KeyMsg, up
+Update Viewport
+Update textInput
+  Handling KeyMsg
+    Handling KeyUp
+  end of update!
+msg: cursor.BlinkMsg, {0 37}
+Update Viewport
+Update textInput
+  end of update!
+msg: tea.KeyMsg, down
+Update Viewport
+Update textInput
+  Handling KeyMsg
+    Handling KeyDown
+  end of update!
+msg: cursor.BlinkMsg, {0 38}
+Update Viewport
+Update textInput
+  end of update!
+msg: tea.KeyMsg, pgup
+Update Viewport
+Update textInput
+  Handling KeyMsg
+  end of update!
+msg: cursor.BlinkMsg, {0 39}
+Update Viewport
+Update textInput
+  end of update!
+msg: tea.KeyMsg, pgdown
+Update Viewport
+Update textInput
+  Handling KeyMsg
+  end of update!
+msg: cursor.BlinkMsg, {0 40}
+Update Viewport
+Update textInput
+  end of update!
+msg: cursor.BlinkMsg, {0 41}
+Update Viewport
+Update textInput
+  end of update!
 msg: tea.KeyMsg, esc
+Update Viewport
+Update textInput
   Handling KeyMsg
     Handling KeyEsc
