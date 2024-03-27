@@ -172,8 +172,6 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		vp  tea.Cmd
 	)
 
-	dbg("Update Viewport")
-	dbg("Update textInput")
 	m.viewport, vp = m.viewport.Update(msg)
 	m.textInput, ti = m.textInput.Update(msg)
 
@@ -201,7 +199,6 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case tea.KeyEnter:
 			if m.textInput.Focused() {
 				dbg("    Handling KeyEnter")
-				//m.viewport, vp = m.viewport.Update(msg)
 				chatMessage := openai.ChatCompletionMessage{
 					Role:    openai.ChatMessageRoleUser,
 					Content: m.textInput.Value(),
@@ -225,7 +222,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.toAI.livingDoc = string(msg)
 		m.stage = Chat
 		m.textInput.Focus()
-		return m, tea.Batch(sendContextToAI(m.aiClient, m.toAI, m.withAIMsg.aiConversation), ti)
+		return m, tea.Batch(sendContextToAI(m.aiClient, m.toAI, m.withAIMsg.aiConversation), ti, textinput.Blink, vp)
 
 	case AIChatMsg:
 		dbg("  Handling AIMessage")
@@ -264,7 +261,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	}
 
-	dbg("  end of update!")
+	dbg("End of Update")
 	return m, tea.Batch(ti, vp)
 
 }
@@ -329,7 +326,7 @@ func initialModel() model {
 
 	ti := textinput.New()
 	ti.Placeholder = "message to assistant..."
-	ti.CharLimit = 200
+	ti.CharLimit = 0
 	ti.Width = 80
 
 	fp := filepicker.New()
