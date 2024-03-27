@@ -331,7 +331,7 @@ func initialModel() model {
 
 	fp := filepicker.New()
 
-	vp := viewport.New(80, 30)
+	vp := viewport.New(80, 10)
 	vp.SetContent(`Press 'Enter' to send a message to the assistant`)
 
 	return model{
