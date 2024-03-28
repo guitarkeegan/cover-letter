@@ -13,6 +13,7 @@ import (
 	"github.com/charmbracelet/bubbles/textinput"
 	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
 	cl "github.com/guitarkeegan/cover-letter/assistant"
 	"github.com/joho/godotenv"
 	"github.com/sashabaranov/go-openai"
@@ -106,9 +107,12 @@ func (m model) renderViewport() []string {
 	for _, cm := range m.withAIMsg.aiConversation {
 		switch cm.Role {
 		case openai.ChatMessageRoleUser:
-			currMessages = append(currMessages, "You: "+cm.Content)
+			// TODO: remove after fix
+			you := lipgloss.NewStyle().Width(m.viewport.Width).Render(cm.Content)
+			currMessages = append(currMessages, "You: "+you)
 		case openai.ChatMessageRoleAssistant:
-			currMessages = append(currMessages, "Assistant: "+cm.Content)
+			assistant := lipgloss.NewStyle().Width(m.viewport.Width).Render(cm.Content)
+			currMessages = append(currMessages, "Assistant: "+assistant)
 		}
 	}
 	return currMessages
